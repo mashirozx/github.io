@@ -1,0 +1,390 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Machine Learning Landscape | Mashiro&#39;s Notes</title>
+<meta name="description" content="My pleasure~" />
+<link rel="shortcut icon" href="https://mashiro.top//favicon.ico?v=1567163752939">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mashiro.top//styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mashiro.top/">
+  <img class="avatar" src="https://mashiro.top//images/avatar.png?v=1567163752939" alt="">
+  </a>
+  <h1 class="site-title">
+    Mashiro&#39;s Notes
+  </h1>
+  <p class="site-description">
+    My pleasure~
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          HOME
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          ARCHIVES
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          TAGS
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          ABOUT
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/mashirozx/" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/2hengxin" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/mashirozx/" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+    
+      
+        <a href="https://2heng.xin" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              The Machine Learning Landscape
+            </h2>
+            <div class="post-info">
+              <span>
+                2018/04/27
+              </span>
+              <span>
+                7 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://view.moezx.cc/images/2019/08/30/machineLearning3.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>This <em>&quot;Hands-On Machine Learning with Scikit-Learn &amp; TensorFlow&quot;</em> is the very first book I've read about ML. I know reading such a book at this time point is a bit out of my business, but maybe it won't be a waste of time if just do this in free time and keep making notes (in English, this is very important).</p>
+<!-- more -->
+<p>The first chapter mainly contains basic knowledge of ML. Here the classification of ML model can be important because it decides how to build models for a specified problem.</p>
+<h2 id="what-does-ml-do">What Does ML Do?</h2>
+<p>Well, I do think always determining a definition with broad and narrow definitions is pretty complex. And I think to answer this question these two graphs could be enough:</p>
+<p><img src="https://view.moezx.cc/images/2018/04/27/Figure-1-1.-The-traditional-approach.png" alt="Figure-1-1.-The-traditional-approach.png"></p>
+<p><img src="https://view.moezx.cc/images/2018/04/27/Figure-1-2.-Machine-Learning-approach.png" alt="Figure-1-2.-Machine-Learning-approach.png"></p>
+<p>So ML is a script that has the ability to self-strengthen.</p>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>To summarize, Machine Learning is great for:</p>
+<ul>
+<li>Problems for which existing solutions require a lot of hand-tuning or long lists of rules: one Machine Learning algorithm can often simplify code and perform better.</li>
+<li>Complex problems for which there is no good solution at all using a traditional approach: the best Machine Learning techniques can find a solution.</li>
+<li>Fluctuating environments: a Machine Learning system can adapt to new data.</li>
+<li>Getting insights about complex problems and large amounts of data.</li>
+</ul>
+<hr>
+<h2 id="types-of-ml-systems">Types of ML Systems</h2>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>There are so many different types of Machine Learning systems that it is useful to classify them in broad categories based on:</p>
+<ul>
+<li>Whether or not they are trained with human supervision (supervised, unsupervised, semisupervised, and Reinforcement Learning)</li>
+<li>Whether or not they can learn incrementally on the fly (online versus batch learning)</li>
+<li>Whether they work by simply comparing new data points to known data points, or instead detect patterns in the training data and build a predictive model, much like scientists do (instance-based versus model-based learning)</li>
+</ul>
+<hr>
+<h3 id="supervisedunsupervised-learning">Supervised/Unsupervised Learning</h3>
+<h4 id="supervised-learning">Supervised learning</h4>
+<p>Normally, you train the system with a <strong>labeled</strong> dataset.</p>
+<p><strong>The first kind</strong> of supervised learning task is  <em>classification</em>, like a spam filter: it is trained with many example emails along with their class (spam or ham), and it must learn how to classify new emails.</p>
+<p>And <strong>the second kind</strong> of supervised learning task is to predict a target numeric value, such as the price of a car, given a set of features (mileage, age, brand, etc.) called predictors. This sort of task is called regression. To train the system, you need to give it many examples of cars, including both their predictors and their labels (i.e., their prices). So you see, <strong>this kind of ML is very important for us economists.</strong></p>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>In Machine Learning an attribute is a data type (e.g., “Mileage”), while a feature has several meanings depending on the context, but generally means an attribute plus its value (e.g., “Mileage = 15,000”). Many people use the words attribute and feature interchangeably, though.</p>
+<hr>
+<p>Here are some of the most important supervised learning algorithms:</p>
+<ul>
+<li>k-Nearest Neighbors</li>
+<li>Linear Regression</li>
+<li>Logistic Regression</li>
+<li>Support Vector Machines (SVMs)</li>
+<li>Decision Trees and Random Forests</li>
+<li>Neural networks2</li>
+</ul>
+<h4 id="unsupervised-learning">Unsupervised learning*</h4>
+<p>In unsupervised learning, the training data is unlabeled. Currently not understand this segment well, further study is needed.</p>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>Here are some of the most important unsupervised learning algorithms:</p>
+<ul>
+<li>Clustering (聚类)</li>
+<li>k-Means</li>
+<li>Hierarchical Cluster Analysis (HCA)</li>
+<li>Expectation Maximization</li>
+<li>Visualization and <em>dimensionality reduction</em></li>
+<li>Principal Component Analysis (PCA)</li>
+<li>Kernel PCA</li>
+<li>Locally-Linear Embedding (LLE)</li>
+<li>t-distributed Stochastic Neighbor Embedding (t-SNE)</li>
+<li>Association rule learning</li>
+<li>Apriori</li>
+<li>Eclat</li>
+<li>Semisupervised learning</li>
+<li>Anomaly detection (<em>eg. detecting unusual payment</em>)</li>
+</ul>
+<hr>
+<h4 id="semisupervised-learning">Semisupervised learning</h4>
+<p>Some algorithms can deal with partially labeled training data, usually a lot of unlabeled data and a little bit of labeled data. A typical example is Google Photos.</p>
+<h4 id="reinforcement-learning">Reinforcement Learning*</h4>
+<p>Learing by rewards and penalties. Further study needed. AlphaGo is a good example.</p>
+<p><img src="https://view.moezx.cc/images/2018/04/27/Figure-1-12.-Reinforcement-Learning.png" alt="Figure-1-12.-Reinforcement-Learning.png"></p>
+<h3 id="batch-and-online-learning">Batch and Online Learning</h3>
+<p>Whether or not the system can learn incrementally from a stream of incoming data.</p>
+<h4 id="batch-learning">Batch learning</h4>
+<p>Training off line and launching into production without learning any more. Every time to add new data to example dataset, the system need to scratch on the full dataset again, not just the new data, but also the old data.</p>
+<p>It's time token and resources occupation, so we need online learning.</p>
+<h4 id="online-learning">Online learning</h4>
+<p>Training the system incrementally by feeding it data instances sequentially, either individually or by small groups called mini-batches.</p>
+<p>It can also be used to train systems on huge datasets that cannot fit in one machine’s main memory.</p>
+<hr>
+<p><strong>NOTE</strong></p>
+<p>This whole process is usually done offline (i.e., not on the live system), so online learning can be a confusing name. Think of it as incremental learning.</p>
+<hr>
+<p>In online learning, you should be very cautious about <strong>bad data</strong>.</p>
+<h3 id="instance-based-versus-model-based-learning">Instance-Based Versus Model-Based Learning</h3>
+<p>Categorizing Machine Learning systems is by how they generalize (一般化？).</p>
+<blockquote>
+<p>Most Machine Learning tasks are about making predictions. This means that given a number of training examples, the system needs to be able to generalize to examples it has never seen before. Having a good performance measure on the training data is good, but insufficient; the true goal is to perform well on new instances.</p>
+</blockquote>
+<p>In one words, I think it means your algorithm could generally used to another datasets, not only to specified dataset. Actually this is why we do it with codes instead of Excel aha?</p>
+<h4 id="instance-based-learning">Instance-based learning*</h4>
+<p><em>Not understand well, only beacuse of my poor English?</em> :(</p>
+<p>In my currently understanding it means learning not only by the same label, but also the similar label.</p>
+<h4 id="model-based-learning">Model-based learning</h4>
+<p>This is pretty like what we do on Excel—try to regress with different functions. In this case, the functions are models, such like linear models and so on.</p>
+<p>This is the first example code making linear regression with Scikit-Learn:</p>
+<pre><code class="language-python">import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import sklearn
+
+# Load the data
+oecd_bli = pd.read_csv(&quot;oecd_bli_2015.csv&quot;, thousands=',')
+gdp_per_capita = pd.read_csv(&quot;gdp_per_capita.csv&quot;,thousands=',',delimiter='\t',
+                            encoding='latin1', na_values=&quot;n/a&quot;)
+
+# Prepare the data
+country_stats = prepare_country_stats(oecd_bli, gdp_per_capita)
+X = np.c_[country_stats[&quot;GDP per capita&quot;]]
+y = np.c_[country_stats[&quot;Life satisfaction&quot;]]
+
+# Visualize the data
+country_stats.plot(kind='scatter', x=&quot;GDP per capita&quot;, y='Life satisfaction')
+plt.show()
+
+# Select a linear model
+lin_reg_model = sklearn.linear_model.LinearRegression()
+
+# Train the model
+lin_reg_model.fit(X, y)
+
+# Make a prediction for Cyprus
+X_new = [[22587]]  # Cyprus' GDP per capita
+print(lin_reg_model.predict(X_new)) # outputs [[ 5.96242338]]
+</code></pre>
+<h2 id="main-challenges-of-machine-learning">Main Challenges of Machine Learning</h2>
+<p><strong>Bad algorithm</strong> vs. <strong>bad data</strong>.</p>
+<h3 id="insufficient-quantity-of-training-data">Insufficient Quantity of Training Data</h3>
+<p>Quantity is important. There's also an interesting research find that a huge number of data could make up the shortages on algorithm. If you have a lot of data <s>money</s>, you can do whatever you like. XD</p>
+<p><img src="https://view.moezx.cc/images/2018/04/27/Figure-1-20.-The-importance-of-data-versus-algorithms.png" alt="Figure-1-20.-The-importance-of-data-versus-algorithms.png"></p>
+<h3 id="nonrepresentative-training-data">Nonrepresentative Training Data</h3>
+<p>Statistically, they are extreme value.</p>
+<h3 id="poor-quality-data">Poor-Quality Data</h3>
+<h3 id="irrelevant-features">Irrelevant Features</h3>
+<p>Means too many features with too little data.</p>
+<h3 id="overfitting-the-training-data">Overfitting the Training Data</h3>
+<h3 id="underfitting-the-training-data">Underfitting the Training Data</h3>
+<h2 id="-eof-">-EOF-</h2>
+<p>I find it's a bit slow trying to write every part in detail, maybe I was really too meticulous as writing a reading note, next time I'll try to conclude in my own words instead of using lots of words directly from the book. <i class="fa fa-meetup" aria-hidden="true" style="color:#d34836"></i></p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#what-does-ml-do">What Does ML Do?</a></li>
+<li><a href="#types-of-ml-systems">Types of ML Systems</a>
+<ul>
+<li><a href="#supervisedunsupervised-learning">Supervised/Unsupervised Learning</a>
+<ul>
+<li><a href="#supervised-learning">Supervised learning</a></li>
+<li><a href="#unsupervised-learning">Unsupervised learning*</a></li>
+<li><a href="#semisupervised-learning">Semisupervised learning</a></li>
+<li><a href="#reinforcement-learning">Reinforcement Learning*</a></li>
+</ul>
+</li>
+<li><a href="#batch-and-online-learning">Batch and Online Learning</a>
+<ul>
+<li><a href="#batch-learning">Batch learning</a></li>
+<li><a href="#online-learning">Online learning</a></li>
+</ul>
+</li>
+<li><a href="#instance-based-versus-model-based-learning">Instance-Based Versus Model-Based Learning</a>
+<ul>
+<li><a href="#instance-based-learning">Instance-based learning*</a></li>
+<li><a href="#model-based-learning">Model-based learning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#main-challenges-of-machine-learning">Main Challenges of Machine Learning</a>
+<ul>
+<li><a href="#insufficient-quantity-of-training-data">Insufficient Quantity of Training Data</a></li>
+<li><a href="#nonrepresentative-training-data">Nonrepresentative Training Data</a></li>
+<li><a href="#poor-quality-data">Poor-Quality Data</a></li>
+<li><a href="#irrelevant-features">Irrelevant Features</a></li>
+<li><a href="#overfitting-the-training-data">Overfitting the Training Data</a></li>
+<li><a href="#underfitting-the-training-data">Underfitting the Training Data</a></li>
+</ul>
+</li>
+<li><a href="#-eof-">-EOF-</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mashiro.top//post/hello-gridea">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'a98876305cd3d78eeac4',
+    clientSecret: 'e8e473c1803da7a5bf5c61be46755bd4a181c04c',
+    repo: 'Comments',
+    owner: 'mashirozx',
+    admin: ['mashirozx'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
+  <a class="rss" href="https://mashiro.top//atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      console.log('section.offsetHeight', section.offsetHeight);
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
