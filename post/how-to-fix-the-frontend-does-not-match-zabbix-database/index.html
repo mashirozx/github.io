@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Gridea | Mashiro&#39;s Notes</title>
+<title>How to Fix &#34;The Frontend Does not Match Zabbix Database&#34; | Mashiro&#39;s Notes</title>
 <meta name="description" content="My pleasure~" />
 <link rel="shortcut icon" href="https://mashiro.top//favicon.ico?v=1567165224776">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -86,47 +86,94 @@
   </div>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# Gridea
-            </h2> 
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              How to Fix &#34;The Frontend Does not Match Zabbix Database&#34;
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-07-29
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+                <a href="https://mashiro.top//tag/C2JHgLYXI" class="post-tag">
+                  # ZABBIX
+                </a>
+              
+                <a href="https://mashiro.top//tag/VkMdxo-OCk" class="post-tag">
+                  # Linux
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://view.moezx.cc/images/2019/08/30/install-php-7-2-ubuntu.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>Err: The frontend does not match Zabbix database. Current database version (mandatory/optional): 3040000/4000003. Required mandatory version: 4000000. Contact your system administrator.</p>
+<!--more-->
+<p>When updating Zabbix from version 3.4 to version 4.0, I saw this on the Zabbix web page:</p>
+<p><img src="https://view.moezx.cc/images/2019/07/30/zabbix-error.png" alt="zabbix-error.png"></p>
+<blockquote>
+<p>Database error<br>
+The frontend does not match Zabbix database. Current database version (mandatory/optional): 3040000/4000003. Required mandatory version: 4000000. Contact your system administrator.</p>
+</blockquote>
+<p>The solution is, login to database and run:</p>
+<pre><code class="language-sql">mysql&gt; use zabbix;
+mysql&gt; update dbversion set mandatory=4000000;
+mysql&gt; flush privileges;
+</code></pre>
+<p>See: <a href="https://blog.whsir.com/post-2357.html">https://blog.whsir.com/post-2357.html</a></p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://mashiro.top//post/hello-gridea">
-        <h2 class="post-title">Hello Gridea</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-01-01
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="https://mashiro.top//tag/3rp8WoJoC" class="post-tag">
-            # Gridea
-          </a>
-        
-      </div>
-      
-        <a href="https://mashiro.top//post/hello-gridea" class="post-feature-image" style="background-image: url('https://view.moezx.cc/images/2019/08/30/hello-gridea.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
 
-      </di>
-    </article>
-  
-</div>
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mashiro.top//post/add-a-version-control-for-cookies">
+              <h3 class="post-title">
+                A Complete JavaScript Cookie Version Control
+              </h3>
+            </a>
+          </div>
+        
 
-        <div class="pagination-container">
-  
-  
-</div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'a98876305cd3d78eeac4',
+    clientSecret: 'e8e473c1803da7a5bf5c61be46755bd4a181c04c',
+    repo: 'Comments',
+    owner: 'mashirozx',
+    admin: ['mashirozx'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
