@@ -966,3 +966,9 @@ td {
         font-family: -apple-system,BlinkMacSystemFont,'Helvetica Neue','PingFang SC','Hiragino Sans GB','Droid Sans Fallback','Microsoft YaHei',sans-serif;
       }
     
+      .inline-img {
+    display: inline-block !important;
+    height: 1em !important;
+    margin: 0 !important;
+}
+    
