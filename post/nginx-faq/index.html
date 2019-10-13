@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Machine Learning | Mashiro&#39;s Notes</title>
+<title>Nginx FAQ | Mashiro&#39;s Notes</title>
 <meta name="description" content="My pleasure~" />
 <link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1570956647322">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -86,50 +86,92 @@
   </div>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# Machine Learning
-            </h2> 
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Nginx FAQ
+            </h2>
+            <div class="post-info">
+              <span>
+                2019-10-13
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+                <a href="https://mashiro.top/tag/RiHJnncHI" class="post-tag">
+                  # Nginx
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://view.moezx.cc/images/2019/10/13/what-is-nginx.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h3 id="neterr_incomplete_chunked_encoding-200">net::ERR_INCOMPLETE_CHUNKED_ENCODING 200</h3>
+<p>Fixed by adding <code>proxy_max_temp_file_size 0;</code> in <code>server</code> block.</p>
+<h3 id="neterr_http2_protocol_error-200">net::ERR_HTTP2_PROTOCOL_ERROR 200</h3>
+<p>The same issue as the issue ERR_INCOMPLETE_CHUNKED_ENCODING. The ERR_INCOMPLETE_CHUNKED_ENCODING happened on my server side, resource load directly from my server will be warmed as <code>net::ERR_INCOMPLETE_CHUNKED_ENCODING 200</code> by chrome, and the same resource load from cloudflare will be warmed as <code>net::ERR_HTTP2_PROTOCOL_ERROR 200</code>. So the way to fix is the same, just adding <code>proxy_max_temp_file_size 0;</code> in <code>server</code> block.</p>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#neterr_incomplete_chunked_encoding-200">net::ERR_INCOMPLETE_CHUNKED_ENCODING 200</a></li>
+<li><a href="#neterr_http2_protocol_error-200">net::ERR_HTTP2_PROTOCOL_ERROR 200</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://mashiro.top/post/the-machine-learning-landscape">
-        <h2 class="post-title">The Machine Learning Landscape</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-04-27
-        </span>
-        <span>
-          8 min read
-        </span>
-        
-          <a href="https://mashiro.top/tag/xnIhP2W461" class="post-tag">
-            # Machine Learning
-          </a>
-        
-          <a href="https://mashiro.top/tag/L0El6szYK" class="post-tag">
-            # Reading Notes
-          </a>
-        
-      </div>
-      
-        <a href="https://mashiro.top/post/the-machine-learning-landscape" class="post-feature-image" style="background-image: url('https://view.moezx.cc/images/2019/08/30/machineLearning3.png')">
-        </a>
-      
-      <div class="post-abstract">
-        <p>This <em>&quot;Hands-On Machine Learning with Scikit-Learn &amp; TensorFlow&quot;</em> is the very first book I've read about ML. I know reading such a book at this time point is a bit out of my business, but maybe it won't be a waste of time if just do this in free time and keep making notes (in English, this is very important).</p>
 
-      </di>
-    </article>
-  
-</div>
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mashiro.top/post/android-studio-kotlin-unresolved-references">
+              <h3 class="post-title">
+                Android Studio + Kotlin: Unresolved references
+              </h3>
+            </a>
+          </div>
+        
 
-        <div class="pagination-container">
-  
-  
-</div>
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'a98876305cd3d78eeac4',
+    clientSecret: 'e8e473c1803da7a5bf5c61be46755bd4a181c04c',
+    repo: 'Comments',
+    owner: 'mashirozx',
+    admin: ['mashirozx'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   Made with ❤ by <a href="https://github.com/mashirozx" target="_blank">Mashiro</a> | 

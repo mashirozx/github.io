@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mashiro.top</id>
     <title>Mashiro&apos;s Notes</title>
-    <updated>2019-08-31T17:39:35.466Z</updated>
+    <updated>2019-10-13T08:50:55.905Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mashiro.top"/>
     <link rel="self" href="https://mashiro.top/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://mashiro.top/images/avatar.png</logo>
     <icon>https://mashiro.top/favicon.ico</icon>
     <rights>All rights reserved 2019, Mashiro&apos;s Notes</rights>
+    <entry>
+        <title type="html"><![CDATA[Nginx FAQ]]></title>
+        <id>https://mashiro.top/post/nginx-faq</id>
+        <link href="https://mashiro.top/post/nginx-faq">
+        </link>
+        <updated>2019-10-12T22:16:57.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Android Studio + Kotlin: Unresolved references]]></title>
+        <id>https://mashiro.top/post/android-studio-kotlin-unresolved-references</id>
+        <link href="https://mashiro.top/post/android-studio-kotlin-unresolved-references">
+        </link>
+        <updated>2019-09-12T07:41:57.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How to Fix "The Frontend Does not Match Zabbix Database"]]></title>
         <id>https://mashiro.top/post/how-to-fix-the-frontend-does-not-match-zabbix-database</id>
