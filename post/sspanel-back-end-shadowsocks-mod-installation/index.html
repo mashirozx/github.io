@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SSPanel Back-end (shadowsocks-mod) Installation | Mashiro&#39;s Notes</title>
 <meta name="description" content="My pleasure~" />
-<link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1571239891510">
+<link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1571241713479">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://mashiro.top/styles/main.css">
@@ -29,7 +29,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://mashiro.top">
-  <img class="avatar" src="https://mashiro.top/images/avatar.png?v=1571239891510" alt="">
+  <img class="avatar" src="https://mashiro.top/images/avatar.png?v=1571241713479" alt="">
   </a>
   <h1 class="site-title">
     Mashiro&#39;s Notes
@@ -114,7 +114,7 @@
               
             </div>
             
-              <img class="post-feature-image" src="https://view.moezx.cc/images/2018/01/12/wallpaper-2572384.jpg" alt="">
+              <img class="post-feature-image" src="https://view.moezx.cc/images/2019/10/17/modern-airport-terminal-runaway-cartoon-vector_81522-1893.jpg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
@@ -123,13 +123,9 @@
 </code></pre>
 <h3 id="compile-encryption-library-libsodium">Compile encryption library (libsodium)</h3>
 <pre><code class="language-shell">wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
-
 tar xf libsodium-1.0.16.tar.gz &amp;&amp; cd libsodium-1.0.16
-
 ./configure &amp;&amp; make -j2 &amp;&amp; make install
-
 echo /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf
-
 ldconfig
 </code></pre>
 <h3 id="install-shadowsocks-mod">Install shadowsocks-mod</h3>
