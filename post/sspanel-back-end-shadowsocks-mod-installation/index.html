@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello Gridea | Mashiro&#39;s Notes</title>
+<title>SSPanel Back-end (shadowsocks-mod) Installation | Mashiro&#39;s Notes</title>
 <meta name="description" content="My pleasure~" />
 <link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1571238437096">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -98,51 +98,102 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Gridea
+              SSPanel Back-end (shadowsocks-mod) Installation
             </h2>
             <div class="post-info">
               <span>
-                2018-01-01
+                2019-10-16
               </span>
               <span>
                 2 min read
               </span>
               
-                <a href="https://mashiro.top/tag/3rp8WoJoC" class="post-tag">
-                  # Gridea
+                <a href="https://mashiro.top/tag/VkMdxo-OCk" class="post-tag">
+                  # Linux
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://view.moezx.cc/images/2019/08/30/hello-gridea.png" alt="">
-            
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>👏  Welcome to use <strong>Gridea</strong> ！</p>
-<p>✍️  <strong>Gridea</strong> A static blog writing client. You can use it to record your life, mood, knowledge, notes and ideas...</p>
-<!--more-->
-<h2 id="features">Features👇</h2>
-<p>📝  Use the coolest  <strong>Markdown</strong> grammar to create quickly</p>
-<p>🌉  Insert pictures and article cover charts anywhere in the article</p>
-<p>🏷️  Label and group articles</p>
-<p>📋  Customize menus and even create external link menus</p>
-<p>💻  Use this client on <strong>Windows</strong> or <strong>MacOS</strong>  or <strong>Linux</strong></p>
-<p>🌎  Use <strong>Github Pages</strong> or <strong>Coding Pages</strong> to show the world that more platforms will be supported in the future</p>
-<p>💬  Simply configure and access the <a href="https://github.com/gitalk/gitalk">Gitalk</a> or <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> comment system</p>
-<p>🇬🇧  Use <strong>simplified Chinese</strong>、<strong>traditional Chinese</strong>、 <strong>English</strong></p>
-<p>🌁  Use any default theme within the application or any third-party theme, free theme customization</p>
-<p>🖥  Customize the source folder and synchronize multiple devices using OneDrive, iCloud, Dropbox, etc.</p>
-<p>🌱  Of course <strong>Gridea</strong> is still very young and has many shortcomings, but please believe it will keep moving forward 🏃</p>
-<p>In the future, it will surely become your inseparable partner</p>
-<p>Give full play to your talents！</p>
-<p>😘  Enjoy~</p>
+                <h3 id="install-gcc-compile-tool-build-essential">Install GCC compile tool (build-essential)</h3>
+<pre><code class="language-shell">apt install build-essential     
+</code></pre>
+<h3 id="compile-encryption-library-libsodium">Compile encryption library (libsodium)</h3>
+<pre><code class="language-shell">wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
+
+tar xf libsodium-1.0.16.tar.gz &amp;&amp; cd libsodium-1.0.16
+
+./configure &amp;&amp; make -j2 &amp;&amp; make install
+
+echo /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf
+
+ldconfig
+</code></pre>
+<h3 id="install-shadowsocks-mod">Install shadowsocks-mod</h3>
+<pre><code class="language-shell">git clone https://github.com/mashirozx/shadowsocks-mod.git
+cd shadowsocks-mod
+git reset --hard efc986b731164aae3fef6fb5b9e8802754e63e3e
+pip install -r requirements.txt
+cp apiconfig.py userapiconfig.py
+cp config.json user-config.json
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<h4 id="database-api">Database API</h4>
+<pre><code>NODE_ID = 0
+
+API_INTERFACE = &quot;glzjinmod&quot;
+
+MYSQL_HOST = &quot;127.0.0.1&quot;
+MYSQL_PORT = 3306
+MYSQL_USER = &quot;sspanel&quot;
+MYSQL_PASS = &quot;sspanel&quot;
+MYSQL_DB = &quot;sspanel&quot;
+</code></pre>
+<h4 id="web-api">Web API</h4>
+<pre><code>NODE_ID = 0
+
+API_INTERFACE = &quot;modwebapi&quot;
+
+WEBAPI_URL = &quot;https://ssr.com&quot;
+WEBAPI_TOKEN = &quot;NimaQu&quot;
+</code></pre>
+<h3 id="start">Start</h3>
+<pre><code># test log server
+python server.py
+
+# run with log
+./logrun.sh
+
+# run without log
+./run.sh
+
+# view log
+./tail.sh
+
+# stop
+./stop.sh
+</code></pre>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#features">Features👇</a></li>
+<li>
+<ul>
+<li><a href="#install-gcc-compile-tool-build-essential">Install GCC compile tool (build-essential)</a></li>
+<li><a href="#compile-encryption-library-libsodium">Compile encryption library (libsodium)</a></li>
+<li><a href="#install-shadowsocks-mod">Install shadowsocks-mod</a></li>
+<li><a href="#configuration">Configuration</a>
+<ul>
+<li><a href="#database-api">Database API</a></li>
+<li><a href="#web-api">Web API</a></li>
+</ul>
+</li>
+<li><a href="#start">Start</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -152,6 +203,15 @@
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mashiro.top/post/nginx-faq">
+              <h3 class="post-title">
+                Nginx FAQ
+              </h3>
+            </a>
+          </div>
         
 
         
