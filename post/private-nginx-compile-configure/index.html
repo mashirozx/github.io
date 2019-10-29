@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Private: Nginx Compile Configure | Mashiro&#39;s Notes</title>
 <meta name="description" content="My pleasure~" />
-<link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1572329369252">
+<link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1572330583840">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://mashiro.top/styles/main.css">
@@ -29,7 +29,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://mashiro.top">
-  <img class="avatar" src="https://mashiro.top/images/avatar.png?v=1572329369252" alt="">
+  <img class="avatar" src="https://mashiro.top/images/avatar.png?v=1572330583840" alt="">
   </a>
   <h1 class="site-title">
     Mashiro&#39;s Notes
@@ -118,8 +118,7 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>$PATH = /home/tengine</p>
-<pre><code class="language-shell">make clean
+                <pre><code class="language-shell">make clean
 
 ./configure --prefix=/etc/nginx/ \
             --with-stream \
@@ -127,6 +126,7 @@
             --with-stream_ssl_module \
             --with-stream_ssl_preread_module \
             --with-http_geoip_module \
+            --with-http_auth_request_module \
             --sbin-path=/usr/sbin/nginx \
             --conf-path=/etc/nginx/nginx.conf \
             --http-log-path=/var/log/nginx/access.log \
