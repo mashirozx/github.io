@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Private: Nginx Compile Configure | Mashiro&#39;s Notes</title>
+<title>Docker Frequently Used Commands | Mashiro&#39;s Notes</title>
 <meta name="description" content="My pleasure~" />
 <link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1576318457820">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -98,54 +98,29 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Private: Nginx Compile Configure
+              Docker Frequently Used Commands
             </h2>
             <div class="post-info">
               <span>
-                2019-10-29
+                2019-11-11
               </span>
               <span>
                 1 min read
               </span>
               
-                <a href="https://mashiro.top/tag/RiHJnncHI" class="post-tag">
-                  # Nginx
+                <a href="https://mashiro.top/tag/Iln7dG6Zq" class="post-tag">
+                  # Docker
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="https://view.moezx.cc/images/2019/10/13/what-is-nginx.png" alt="">
+              <img class="post-feature-image" src="https://view.moezx.cc/images/2019/12/14/docker.jpg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <pre><code class="language-shell">make clean
-
-./configure --prefix=/etc/nginx/ \
-            --with-stream \
-            --with-stream_realip_module \
-            --with-stream_ssl_module \
-            --with-stream_ssl_preread_module \
-            --with-http_geoip_module \
-            --with-http_auth_request_module \
-            --sbin-path=/usr/sbin/nginx \
-            --conf-path=/etc/nginx/nginx.conf \
-            --http-log-path=/var/log/nginx/access.log \
-            --error-log-path=/var/log/nginx/error.log \
-            --add-module=../modules/ngx_http_substitutions_filter_module \
-            --add-dynamic-module=../modules/ngx_http_google_filter_module \
-            --add-dynamic-module=../nginx/lua-nginx-module \
-            --add-dynamic-module=../nginx/incubator-pagespeed-ngx-1.13.35.2-stable
-
-#dynamic
-make modules
-
-ls objs/
-
-cp objs/ngx_pagespeed.so /usr/local/nginx/modules/
-
-#cp objs/nginx /usr/local/nginx/sbin/
-
-sed -i 's+ssl on;+#ssl on;+g' app/*
+                <pre><code class="language-bash">docker pull gitlab/gitlab-ce:latest
+docker-compose up -d
+docker-compose ps
 </code></pre>
 
               </div>
@@ -159,9 +134,9 @@ sed -i 's+ssl on;+#ssl on;+g' app/*
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://mashiro.top/post/sspanel-back-end-shadowsocks-mod-installation">
+            <a href="https://mashiro.top/post/private-nginx-compile-configure">
               <h3 class="post-title">
-                SSPanel Back-end (shadowsocks-mod) Installation
+                Private: Nginx Compile Configure
               </h3>
             </a>
           </div>
