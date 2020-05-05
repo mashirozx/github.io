@@ -1,0 +1,333 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mastodon Notes | Mashiro&#39;s Notes</title>
+<meta name="description" content="My pleasure~" />
+<link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1588655344620">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://mashiro.top/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100439904-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100439904-8');
+</script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://mashiro.top">
+  <img class="avatar" src="https://mashiro.top/images/avatar.png?v=1588655344620" alt="">
+  </a>
+  <h1 class="site-title">
+    Mashiro&#39;s Notes
+  </h1>
+  <p class="site-description">
+    My pleasure~
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          Home
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          Archives
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          Tags
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          About
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/mashirozx/" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/2hengxin" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+        <a href="https://weibo.com/mashirozx/" target="_blank">
+          <i class="fab fa-weibo"></i>
+        </a>
+      
+    
+      
+    
+      
+        <a href="https://2heng.xin" target="_blank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Mastodon Notes
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-05-05
+              </span>
+              <span>
+                6 min read
+              </span>
+              
+                <a href="https://mashiro.top/tag/m6C_vucy6/" class="post-tag">
+                  # Mastodon
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://s3.2heng.xin/mashiro.top/covers/2020-05-05-mastodon-notes.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="external-resources">External Resources</h2>
+<p>Using the admin CLI: <a href="https://docs.joinmastodon.org/admin/tootctl/">https://docs.joinmastodon.org/admin/tootctl/</a></p>
+<p>The official Docker guide：<a href="https://github.com/tootsuite/documentation/blob/archive/Running-Mastodon/Docker-Guide.md">https://github.com/tootsuite/documentation/blob/archive/Running-Mastodon/Docker-Guide.md</a></p>
+<p>Nginx part (Chinese): <a href="https://candinya.com/posts/mastodon-first-meet/">https://candinya.com/posts/mastodon-first-meet/</a></p>
+<h2 id="docker-configurations">Docker configurations</h2>
+<p>The project now includes a <code>Dockerfile</code> and a <code>docker-compose.yml</code> file (which requires at least docker-compose version <code>1.10.0</code>).</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Working basic (Linux) server with Nginx (or Apache2; not officially supported).</li>
+<li>Recent stable version of <a href="https://www.docker.com/community-edition">Docker</a>.</li>
+<li>Recent stable version of <a href="https://github.com/docker/compose/releases/latest">Docker-compose</a>.</li>
+</ul>
+<h3 id="setting-up">Setting up</h3>
+<p>Clone Mastodon's repository.</p>
+<pre><code># Clone mastodon to ~/live directory
+git clone https://github.com/tootsuite/mastodon.git live
+# Change directory to ~/live
+cd ~/live
+# Checkout to the latest stable branch
+git checkout $(git tag -l | grep -v 'rc[0-9]*$' | sort -V | tail -n 1)
+</code></pre>
+<p>Review the settings in <code>docker-compose.yml</code>. Note that it is <strong>not default</strong> to store the postgresql database and redis databases in a persistent storage location. If you plan on running your instance in production, you <strong>must</strong> uncomment the <a href="https://github.com/tootsuite/mastodon/blob/972f6bc861affd9bc40181492833108f905a04b6/docker-compose.yml#L7-L16"><code>volumes</code> directive</a> in <code>docker-compose.yml</code>.</p>
+<h3 id="getting-the-mastodon-image">Getting the Mastodon image</h3>
+<h4 id="using-a-prebuilt-image">Using a prebuilt image</h4>
+<p>If you're not making any local code changes or customizations on your instance, you can use a prebuilt Docker image to avoid the time and resource consumption of a build. Images are available from Docker Hub: https://hub.docker.com/r/tootsuite/mastodon/</p>
+<p>To use the prebuilt images:</p>
+<ol>
+<li>Open <code>docker-compose.yml</code> in your favorite text editor.
+<ol>
+<li>Comment out the <code>build: .</code> lines for all images (web, streaming, sidekiq).</li>
+<li>Edit the <code>image: tootsuite/mastodon</code> lines for all images to include the release you want. The default is <code>latest</code> which is the most recent stable version, however it recommended to explicitly pin a version: If you wanted to use v2.2.0 for example, you would edit the lines to say: <code>image: tootsuite/mastodon:v2.2.0</code></li>
+<li>Save the file and exit the text editor.</li>
+</ol>
+</li>
+<li>Run <code>cp .env.production.sample .env.production</code> to bootstrap the configuration. You will need to edit this file later.</li>
+<li>Run <code>docker-compose build</code>. It will now pull the correct image from Docker Hub.</li>
+<li>Set correct file-owner with <code>chown -R 991:991 public</code></li>
+</ol>
+<h4 id="building-your-own-image">Building your own image</h4>
+<p>You must build your own image if you've made any code modifications. To build your own image:</p>
+<ol>
+<li>Open <code>docker-compose.yml</code> in your favorite text editor.
+<ol>
+<li>Uncomment the <code>build: .</code> lines for all images (web, streaming, sidekiq) if needed.</li>
+<li>Save the file and exit the text editor.</li>
+</ol>
+</li>
+<li>Run <code>cp .env.production.sample .env.production</code> to bootstrap the configuration. You will need to edit this file later.</li>
+<li>Run <code>docker-compose build</code>.</li>
+<li>Set correct file-owner with <code>chown -R 991:991 public</code></li>
+</ol>
+<h3 id="building-the-app">Building the app</h3>
+<p>Now the image can be used to generate a configuration with:</p>
+<pre><code>docker-compose run --rm web bundle exec rake mastodon:setup
+</code></pre>
+<p>This is an interactive wizard that will guide you through the basic and necessary options and generate new app secrets. At some point it will output your configuration, copy and paste that configuration into the <code>.env.production</code> file.</p>
+<p>The wizard will setup the database schema and precompile assets. After it's done, you can launch Mastodon with:</p>
+<pre><code>docker-compose up -d
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<p>Following that, make sure that you read the <a href="Production-guide.md">production guide</a>, beginning with the section that describes how to point Nginx to Mastodon.</p>
+<p>The container has two volumes, for the assets and for user uploads, and optionally two more, for the postgresql and redis databases.</p>
+<p>The default docker-compose.yml maps them to the repository's <code>public/assets</code> and <code>public/system</code> directories, you may wish to put them somewhere else. Likewise, the PostgreSQL and Redis images have data containers that you may wish to map somewhere where you know how to find them and back them up.</p>
+<p><strong>Note</strong>: The <code>--rm</code> option for docker-compose will remove the container that is created to run a one-off command after it completes. As data is stored in volumes it is not affected by that container clean-up.</p>
+<h3 id="running-tasks">Running tasks</h3>
+<p>Running any of these tasks via docker-compose would look like this:</p>
+<pre><code>docker-compose run --rm web bundle exec rake mastodon:media:clear
+</code></pre>
+<h3 id="updating">Updating</h3>
+<p>This approach makes updating to the latest version a real breeze.</p>
+<ol>
+<li><code>git fetch</code> to download updates from the repository.</li>
+<li>Now you need to tell git to use those updates. You have probably changed your <code>docker-compose.yml</code> file. Check with <code>git status</code>.</li>
+</ol>
+<ul>
+<li>If the <code>docker-compose.yml</code> file is modified, run <code>git stash</code> to stash your changes.</li>
+</ul>
+<ol start="3">
+<li><code>git checkout TAG_NAME</code> to use the tag code. (If you have committed changes, use <code>git merge TAG_NAME</code> instead, though this isn't likely.)</li>
+<li>Only if you ran <code>git stash</code>, now run <code>git stash pop</code> to redo your changes to <code>docker-compose.yml</code>. Double check the contents of this file.</li>
+<li>Build the updated Mastodon image.</li>
+</ol>
+<ul>
+<li>If you are using a prebuilt image: First, edit the <code>image: tootsuite/mastodon</code> lines in <code>docker-compose.yml</code> to include the tag for the new version. E.g. <code>image: tootsuite/mastodon:v2.3.0</code></li>
+<li>To pull the prebuilt image, or build your own from the updated code: <code>docker-compose build</code></li>
+</ul>
+<ol start="6">
+<li>(optional) <code>docker-compose run --rm web bundle exec rake db:migrate</code> to perform database migrations. Does nothing if your database is up to date.</li>
+<li>(optional) <code>docker-compose run --rm web bundle exec rake assets:precompile</code> to compile new JS and CSS assets.</li>
+<li>Follow any other special instructions in the release notes.</li>
+<li><code>docker-compose up -d</code> to re-create (restart) containers and pick up the changes.</li>
+</ol>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#external-resources">External Resources</a></li>
+<li><a href="#docker-configurations">Docker configurations</a>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#setting-up">Setting up</a></li>
+<li><a href="#getting-the-mastodon-image">Getting the Mastodon image</a>
+<ul>
+<li><a href="#using-a-prebuilt-image">Using a prebuilt image</a></li>
+<li><a href="#building-your-own-image">Building your own image</a></li>
+</ul>
+</li>
+<li><a href="#building-the-app">Building the app</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#running-tasks">Running tasks</a></li>
+<li><a href="#updating">Updating</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://mashiro.top/post/git-notes/">
+              <h3 class="post-title">
+                Git Notes
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: 'a98876305cd3d78eeac4',
+    clientSecret: 'e8e473c1803da7a5bf5c61be46755bd4a181c04c',
+    repo: 'Comments',
+    owner: 'mashirozx',
+    admin: ['mashirozx'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Made with ❤ by <a href="https://github.com/mashirozx" target="_blank">Mashiro</a> | 
+  <a class="rss" href="https://mashiro.top/atom.xml" target="_blank">RSS</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+
+  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+  // This should probably be throttled.
+  // Especially because it triggers during smooth scrolling.
+  // https://lodash.com/docs/4.17.10#throttle
+  // You could do like...
+  // window.addEventListener("scroll", () => {
+  //    _.throttle(doThatStuff, 100);
+  // });
+  // Only not doing it here to keep this Pen dependency-free.
+
+  window.addEventListener("scroll", event => {
+    let fromTop = window.scrollY;
+
+    mainNavLinks.forEach((link, index) => {
+      let section = document.getElementById(decodeURI(link.hash).substring(1));
+      let nextSection = null
+      if (mainNavLinks[index + 1]) {
+        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+      }
+      if (section.offsetTop <= fromTop) {
+        if (nextSection) {
+          if (nextSection.offsetTop > fromTop) {
+            link.classList.add("current");
+          } else {
+            link.classList.remove("current");    
+          }
+        } else {
+          link.classList.add("current");
+        }
+      } else {
+        link.classList.remove("current");
+      }
+    });
+  });
+
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
