@@ -15,9 +15,14 @@
 <script src="https://mashiro.top/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://mashiro.top/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="External Resources
-Using the admin CLI: https://docs.joinmastodon.org/admin/tootctl/
-The official Docker guide：https://g..." />
+    <meta name="description" content="Commands
+docker exec -it mastodon_web_1 bash
+
+# clean cached media files
+tootctl media remove
+
+# emoji CLI
+tootctl emoji..." />
     <meta name="keywords" content="Mastodon" />
     <script src="https://mashiro.top/media/js/waterfall.min.js"></script>
     <script src="https://mashiro.top/media/js/prism.min.js"></script>
@@ -79,7 +84,7 @@ The official Docker guide：https://g..." />
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1588677438341" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1588698493824" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -94,7 +99,7 @@ The official Docker guide：https://g..." />
         <div class="center content">
           <div class="featured-image cover" style="background-image: url('https://s3.2heng.xin/mashiro.top/covers/2020-05-05-mastodon-notes.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-05-05"><i class="fa fa-calendar"></i><span class="lately">6 小时前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-05-05"><i class="fa fa-calendar"></i><span class="lately">12 小时前</span></time>
               
               <a href="https://mashiro.top/post/mastodon-notes/#comments" class="comments meta-info" title="">
                 <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/mastodon-notes/"> </span>
@@ -118,7 +123,16 @@ The official Docker guide：https://g..." />
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h2 id="external-resources">External Resources</h2>
+                  <h2 id="commands">Commands</h2>
+<pre><code class="language-bash">docker exec -it mastodon_web_1 bash
+
+# clean cached media files
+tootctl media remove
+
+# emoji CLI
+tootctl emoji import ./examplr.tar.gz [--prefix PREFIX] [--suffix SUFFIX] [--overwrite] [--unlisted] [--category CATEGORY]
+</code></pre>
+<h2 id="external-resources">External Resources</h2>
 <p>Using the admin CLI: <a href="https://docs.joinmastodon.org/admin/tootctl/">https://docs.joinmastodon.org/admin/tootctl/</a></p>
 <p>The official Docker guide：<a href="https://github.com/tootsuite/documentation/blob/archive/Running-Mastodon/Docker-Guide.md">https://github.com/tootsuite/documentation/blob/archive/Running-Mastodon/Docker-Guide.md</a></p>
 <p>Nginx part (Chinese): <a href="https://candinya.com/posts/mastodon-first-meet/">https://candinya.com/posts/mastodon-first-meet/</a></p>
