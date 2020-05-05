@@ -1,192 +1,288 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Reading Notes | Mashiro&#39;s Notes</title>
 <meta name="description" content="My pleasure~" />
-<link rel="shortcut icon" href="https://mashiro.top/favicon.ico?v=1588655344620">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://mashiro.top/favicon.ico">
 <link rel="stylesheet" href="https://mashiro.top/styles/main.css">
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100439904-8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-100439904-8');
-</script>
-
-
+<script src="https://mashiro.top/media/js/jquery.min.js"></script>
+<script src="https://mashiro.top/media/js/masonry.pkgd.min.js"></script>
+<script src="https://mashiro.top/media/js/aos.js"></script>
+<script src="https://mashiro.top/media/js/pace.min.js"></script>
+<script src="https://mashiro.top/media/js/view-image.min.js"></script>
+<script src="https://mashiro.top/media/js/jquery.magnific-popup.min.js"></script>
+<script src="https://mashiro.top/media/js/functions.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://mashiro.top">
-  <img class="avatar" src="https://mashiro.top/images/avatar.png?v=1588655344620" alt="">
-  </a>
-  <h1 class="site-title">
-    Mashiro&#39;s Notes
-  </h1>
-  <p class="site-description">
-    My pleasure~
-  </p>
-  <div class="menu-container">
-    
+    <!-- start: #wrapper -->
+    <div class="wrapper">
       
-        <a href="/" class="menu">
-          Home
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          Archives
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          Tags
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          About
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-        <a href="https://github.com/mashirozx/" target="_blank">
-          <i class="fab fa-github"></i>
-        </a>
-      
-    
-      
-        <a href="https://twitter.com/2hengxin" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-      
-    
-      
-        <a href="https://weibo.com/mashirozx/" target="_blank">
-          <i class="fab fa-weibo"></i>
-        </a>
-      
-    
-      
-    
-      
-        <a href="https://2heng.xin" target="_blank">
-          <i class="fab fa-facebook"></i>
-        </a>
-      
-    
-  </div>
-</div>
-
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# Reading Notes
-            </h2> 
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
         </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://mashiro.top/post/the-machine-learning-landscape/">
-        <h2 class="post-title">The Machine Learning Landscape</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2018-04-27
-        </span>
-        <span>
-          8 min read
-        </span>
-        
-          <a href="https://mashiro.top/tag/xnIhP2W461/" class="post-tag">
-            # Machine Learning
-          </a>
-        
-          <a href="https://mashiro.top/tag/L0El6szYK/" class="post-tag">
-            # Reading Notes
-          </a>
-        
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://mashiro.top"><img src="" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <li class=""><a href="https://mashiro.top" class="menu">首页</a></li>
+                
+                  <li class="" >
+                    <a href="/" class="menu">
+                      Home
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      Archives
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      Tags
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      About
+                    </a>
+                  </li>
+                
+                <li class="search-menu-item hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="fa fa-search-line"></i></a></li>
+              </ul>
+            </nav>
+            <a href="#search-lightbox" class="lightbox epcl-search-button mfp-inline hide-on-tablet hide-on-desktop"><i class="fa fa-search-line"></i></a>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+      <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
+        <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
+          <div class="search-wrapper section">
+            <form id="gridea-search-form" data-update="1588655532379" action="/search/index.html" class="search-form" _lpchecked="1">
+              <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
+              <button type="submit" class="submit" aria-label="Submit">
+                <i class="fa fa-search-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
-      
-        <a href="https://mashiro.top/post/the-machine-learning-landscape/" class="post-feature-image" style="background-image: url('https://view.moezx.cc/images/2019/08/30/machineLearning3.png')">
+
+      <main id="home" class="main fullcover no-sidebar content">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+                
+            <!-- start: .articles -->
+            <div class="main-article post">
+  <h2 class="year"># Reading Notes</h2>
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://mashiro.top/post/the-machine-learning-landscape/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://view.moezx.cc/images/2019/08/30/machineLearning3.png');"></span>
         </a>
-      
-      <div class="post-abstract">
-        <p>This <em>&quot;Hands-On Machine Learning with Scikit-Learn &amp; TensorFlow&quot;</em> is the very first book I've read about ML. I know reading such a book at this time point is a bit out of my business, but maybe it won't be a waste of time if just do this in free time and keep making notes (in English, this is very important).</p>
+        <div class="info gradient-effect">
+          <time datetime="2018-04-27">2018-04-27</time>
+          <h4 class="title usmall">
+            <a href="https://mashiro.top/post/the-machine-learning-landscape/">The Machine Learning Landscape</a>
+          </h4>
+        </div>
+      </article>
 
-      </div>
-    </article>
-  
+    
+    <div class="clear"></div>
 </div>
+            <!-- end: .articles -->
+            
+                        <div class="epcl-pagination section">
+              <div class="nav">
+                
+                
+              </div>
+            </div>
+            
+          </div>
+          </div>
+        </div>
+      </main>
 
-        <div class="pagination-container">
-  
-  
-</div>
+        <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://mashiro.top/post/mastodon-notes/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://s3.2heng.xin/mashiro.top/covers/2020-05-05-mastodon-notes.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-05-05">2020-05-05</time>
+                      <h4 class="title usmall">
+                        <a href="https://mashiro.top/post/mastodon-notes/">Mastodon Notes</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://mashiro.top/post/git-notes/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://view.moezx.cc/images/2019/12/14/1mSE6ialQ-9TcGUz5ts_FMA.png');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2019-12-14">2019-12-14</time>
+                      <h4 class="title usmall">
+                        <a href="https://mashiro.top/post/git-notes/">Git Notes</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://mashiro.top/post/docker-frequently-used-commands/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://view.moezx.cc/images/2019/12/14/docker.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2019-11-11">2019-11-11</time>
+                      <h4 class="title usmall">
+                        <a href="https://mashiro.top/post/docker-frequently-used-commands/">Docker Frequently Used Commands</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
 
-        <div class="site-footer">
-  Made with ❤ by <a href="https://github.com/mashirozx" target="_blank">Mashiro</a> | 
-  <a class="rss" href="https://mashiro.top/atom.xml" target="_blank">RSS</a>
-</div>
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://mashiro.top/tag/m6C_vucy6/" class="ctag ctag-0 ctag-m6C_vucy6" aria-label="">Mastodon</a>
+                    
+                      <a href="https://mashiro.top/tag/R_iGnb5Pq/" class="ctag ctag-1 ctag-R_iGnb5Pq" aria-label="">Git</a>
+                    
+                      <a href="https://mashiro.top/tag/Iln7dG6Zq/" class="ctag ctag-2 ctag-Iln7dG6Zq" aria-label="">Docker</a>
+                    
+                      <a href="https://mashiro.top/tag/RiHJnncHI/" class="ctag ctag-3 ctag-RiHJnncHI" aria-label="">Nginx</a>
+                    
+                      <a href="https://mashiro.top/tag/VkMdxo-OCk/" class="ctag ctag-4 ctag-VkMdxo-OCk" aria-label="">Linux</a>
+                    
+                      <a href="https://mashiro.top/tag/4lqa5YWv_/" class="ctag ctag-5 ctag-4lqa5YWv_" aria-label="">Android</a>
+                    
+                      <a href="https://mashiro.top/tag/-VYmSUQCv0/" class="ctag ctag-6 ctag--VYmSUQCv0" aria-label="">Kotlin</a>
+                    
+                      <a href="https://mashiro.top/tag/C2JHgLYXI/" class="ctag ctag-7 ctag-C2JHgLYXI" aria-label="">ZABBIX</a>
+                    
+                      <a href="https://mashiro.top/tag/eSdFapQDN/" class="ctag ctag-8 ctag-eSdFapQDN" aria-label="">JavaScript</a>
+                    
+                      <a href="https://mashiro.top/tag/aZneOexRFW/" class="ctag ctag-9 ctag-aZneOexRFW" aria-label="">Cookie</a>
+                    
+                      <a href="https://mashiro.top/tag/xnIhP2W461/" class="ctag ctag-10 ctag-xnIhP2W461" aria-label="">Machine Learning</a>
+                    
+                      <a href="https://mashiro.top/tag/L0El6szYK/" class="ctag ctag-11 ctag-L0El6szYK" aria-label="">Reading Notes</a>
+                    
+                      <a href="https://mashiro.top/tag/3rp8WoJoC/" class="ctag ctag-12 ctag-3rp8WoJoC" aria-label="">Gridea</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://mashiro.top/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">Mashiro&#39;s Notes</a></h4>
+                    <p class="founder">My pleasure~</p>
+                    <div class="social">
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
 
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+            </div>
+            <div class="clear"></div>
+        </div>
 
-  // This should probably be throttled.
-  // Especially because it triggers during smooth scrolling.
-  // https://lodash.com/docs/4.17.10#throttle
-  // You could do like...
-  // window.addEventListener("scroll", () => {
-  //    _.throttle(doThatStuff, 100);
-  // });
-  // Only not doing it here to keep this Pen dependency-free.
+        <div class="logo">
+          <a href="https://mashiro.top"><img src="" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 12 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    
+    <div class="clear"></div>
 
-  window.addEventListener("scroll", event => {
-    let fromTop = window.scrollY;
+        
 
-    mainNavLinks.forEach((link, index) => {
-      let section = document.getElementById(decodeURI(link.hash).substring(1));
-      let nextSection = null
-      if (mainNavLinks[index + 1]) {
-        nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-      }
-      if (section.offsetTop <= fromTop) {
-        if (nextSection) {
-          if (nextSection.offsetTop > fromTop) {
-            link.classList.add("current");
-          } else {
-            link.classList.remove("current");    
-          }
-        } else {
-          link.classList.add("current");
-        }
-      } else {
-        link.classList.remove("current");
-      }
-    });
-  });
-
-</script>
-
-      </div>
     </div>
+    <!-- end: #wrapper -->
   </body>
 </html>
