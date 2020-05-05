@@ -4263,6 +4263,7 @@ div.text .wp-block-table {
 }
 #header .logo a img,
 .logo a img {
+  width: 80px;
   display: block;
   max-width: 100%;
   height: auto;
@@ -9624,3 +9625,6 @@ photos .photo:last-child {
   border-top: 1px solid #aaa;
   padding-top: 8px;
 }
+
+      #header .logo a img, .logo a img {width: inherit;}
+    
