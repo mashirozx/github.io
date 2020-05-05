@@ -9627,4 +9627,5 @@ photos .photo:last-child {
 }
 
       #header .logo a img, .logo a img {width: inherit;}
+.inline-img {display: inline-block !important; height: 1em !important; margin: 0 !important;}
     
